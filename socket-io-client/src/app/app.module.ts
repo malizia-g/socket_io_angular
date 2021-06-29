@@ -8,7 +8,7 @@ import { ChatService } from './chat-service.service';
 
 //Qui si dichiara la configurazione di Socket.io
 const config: SocketIoConfig = {
-  url: 'https://3000-purple-buzzard-fxtm6ont.ws-eu08.gitpod.io',
+  url: 'TUO_SERVER_URL',
   options: {},
   /*options: { transports: ['websocket', 'polling', 'flashsocket'] } <- da provare nel caso dia problemi CORS */
 };
