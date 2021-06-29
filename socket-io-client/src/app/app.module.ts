@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { ChatService } from './chat-service.service';
 import { CesarService } from './cesar.service';
+import { CryptoService } from './crypto.service';
+import { FormsModule } from '@angular/forms';
 
 //Qui si dichiara la configurazione di Socket.io
 const config: SocketIoConfig = {
@@ -20,9 +22,10 @@ const config: SocketIoConfig = {
   ],
   imports: [
     BrowserModule,
-    SocketIoModule.forRoot(config) //Aggiungi SocketIo tra le librerie
+    SocketIoModule.forRoot(config), //Aggiungi SocketIo tra le librerie
+    FormsModule
   ],
-  providers: [ChatService, CesarService],
+  providers: [ChatService, CesarService, CryptoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
