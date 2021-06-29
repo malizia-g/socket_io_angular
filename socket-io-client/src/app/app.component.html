@@ -1,3 +1,6 @@
+<input  (keyup)="setKey(key)" #key/> actual key: {{key.value}}
+
+<br>
 <input  (keyup)="$event.keyCode == 13 && sendMessage(message)" #message/>
 <button (click)="sendMessage(message)">Send Message</button>
 
