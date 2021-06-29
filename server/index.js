@@ -6,7 +6,7 @@ app.use(cors());
 const httpServer = require("http").createServer(app);
 const options = { 
  cors: {
-    origin: "https://4200-purple-buzzard-fxtm6ont.ws-eu08.gitpod.io",
+    origin: "*",
     methods: ["GET", "POST"]
   }
 };
