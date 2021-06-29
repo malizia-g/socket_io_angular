@@ -12,17 +12,20 @@ export class AppComponent {
   constructor(private socketService: ChatService) {
   }
 
-  sendMessage(message: HTMLInputElement) {
-    this.socketService.sendMessage(message.value);
-
-    console.log("sent: " + message.value)
-    message.value="";
-  }
+  //All'avvio il componente si sottoscrive al servizio che riceve messaggi
   ngOnInit() {
-    this.socketService.getMessage()
+    this.socketService.getMessagesObservable()
       .subscribe((message: string) => {
+        //Ogni volta che arriva un messaggio lo si aggiunge a una lista
         this.messageList.push(message);
         console.log("messagereceived: " + message)
       });
+  }
+
+  //il metodo gestisce l'invio di un messaggio chimando la funzione send message
+  sendMessage(message: HTMLInputElement) {
+    this.socketService.sendMessage(message.value);
+    console.log("sent: " + message.value)
+    message.value="";
   }
 }
